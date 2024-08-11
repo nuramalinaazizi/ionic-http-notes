@@ -10,4 +10,18 @@
       <ion-title size="large">read</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-item>
+    <ion-input placeholder="Enter id" [(ngModel)]="bookingId"></ion-input>
+    <ion-button (click)="readPressed()">Get booking</ion-button>
+  </ion-item>
+
+  <ion-card *ngIf="booking">
+    <ion-card-header>
+      <ion-card-title>{{booking["name"]}}</ion-card-title>
+      <ion-card-subtitle>{{booking["motor"]}}</ion-card-subtitle>
+    </ion-card-header>
+     <ion-card-content>
+      {{booking["pickup"]}} - {{booking["sent"]}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

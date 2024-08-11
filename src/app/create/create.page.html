@@ -11,18 +11,18 @@
     </ion-toolbar>
   </ion-header>
   <ion-item>
-    <ion-input label="Name" labelPlacement="floating" placeholder="Enter name"></ion-input>
+    <ion-input label="Name" labelPlacement="floating" placeholder="Enter name" [(ngModel)] = "booking.name" ></ion-input>
 
   </ion-item>
   <ion-item>
-    <ion-input label="Email" labelPlacement="floating" placeholder="Enter email"></ion-input>
+    <ion-input label="Email" labelPlacement="floating" placeholder="Enter email" [(ngModel)] = "booking.email" ></ion-input>
   </ion-item>
   <ion-item>
-    <ion-textarea label="Address" labelPlacement="floating" placeholder="Enter address"></ion-textarea>
+    <ion-textarea label="Address" labelPlacement="floating" placeholder="Enter address" [(ngModel)] = "booking.address" ></ion-textarea>
   </ion-item>
   <ion-item>
     <ion-label>Pick up date and time</ion-label>
-    <ion-datetime-button datetime="pickupdatetime"></ion-datetime-button>
+    <ion-datetime-button datetime="pickupdatetime" [(ngModel)] = "booking.pickup" ></ion-datetime-button>
     <ion-modal [keepContentsMounted]="true">
       <ng-template>
         <ion-datetime id="pickupdatetime"></ion-datetime>
@@ -31,7 +31,7 @@
   </ion-item>
   <ion-item>
     <ion-label>Sent date and time</ion-label>
-    <ion-datetime-button datetime="sentdatetime"></ion-datetime-button>
+    <ion-datetime-button datetime="sentdatetime" [(ngModel)] = "booking.sent" ></ion-datetime-button>
     <ion-modal [keepContentsMounted]="true">
       <ng-template>
         <ion-datetime id="sentdatetime"></ion-datetime>
@@ -39,12 +39,12 @@
     </ion-modal>
   </ion-item>
   <ion-item>
-    <ion-select label="Motor Model" label-placement="fixed" placeholder="Motor Model">
+    <ion-select label="Motor Model" label-placement="fixed" placeholder="Motor Model" [(ngModel)] = "booking.motor" >
       <ion-select-option value="rx5">RX5</ion-select-option>
       <ion-select-option value="nmax">N-Max</ion-select-option>
       <ion-select-option value="vario">Vario</ion-select-option>
       <ion-select-option value="scoopy">Scoopy</ion-select-option>
     </ion-select>
   </ion-item>
-  <ion-button>Book now</ion-button>
+  <ion-button (click)="sendData()">Book now</ion-button>
 </ion-content>

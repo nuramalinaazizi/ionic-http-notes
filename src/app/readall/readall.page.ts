@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
+import { Route, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-readall',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadallPage implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService, private router: Router, private toastCtrl: ToastController) { }
 
   ngOnInit() {
+    this.getData()
   }
 
+  booking = []
+
+  getData() {
+    this.httpService.getAll().subscribe((resp: any) => {
+      this.booking = resp["sheet1"];
+
+    }, err => {
+
+    })
+
+  }
 }
