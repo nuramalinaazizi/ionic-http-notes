@@ -13,8 +13,9 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button [routerLink]="['/create']">POST example</ion-button>
+  <ion-button [routerLink]="['/readall']">GET example</ion-button>
+  <ion-button [routerLink]="['/read']">GET by ID & DELETE example</ion-button>
+  <ion-button [routerLink]="['/update']">PUT example</ion-button>
+
 </ion-content>
